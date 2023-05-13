@@ -1,0 +1,39 @@
+import datetime
+
+def calculate_age_in_days(date_of_birth, current_date):
+  """Calculates the age of a person in days.
+
+  Args:
+    date_of_birth: The person's date of birth.
+    current_date: The current date.
+
+  Returns:
+    The person's age in days.
+  """
+
+  # Convert the string to a datetime object.
+  date_of_birth = datetime.datetime.strptime(date_of_birth, "%Y-%m-%d")
+
+  # Calculate the difference between the two dates.
+  difference = current_date - date_of_birth
+
+  # Convert the difference to days.
+  days = difference.days
+
+  return days
+
+def main():
+  # Get the user's date of birth.
+  date_of_birth = input("Enter your date of birth (YYYY-MM-DD): ")
+
+  # Get the current date.
+  current_date = datetime.datetime.now()
+
+  # Calculate the user's age in days.
+  age_in_days = calculate_age_in_days(date_of_birth, current_date)
+
+  # Display the result.
+  print("Your age in days is:", age_in_days)
+
+if __name__ == "__main__":
+  main()
